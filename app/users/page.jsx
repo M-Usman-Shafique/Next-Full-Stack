@@ -1,24 +1,22 @@
+// import Link from "next/link";
 import Link from "next/link";
 
 const getUsers = async () => {
-    let data = await fetch("http://localhost:3000/api/users");
-    data = await data.json();
-    return data;
-}
-
-export default async function page() {
-    const users = await getUsers();
-    console.log(users)
-
+  let data = await fetch("http://localhost:3000/api/users");
+  return (data = await data.json());
+};
+export default async function Users() {
+  const users = await getUsers();
   return (
-    <>
-    <h1 className="text-white font-bold text-xl">Users List:</h1>
-    {users.map((user) => (
-       <div key={user.id}>
-        <Link href={`users/${user.id}`} key={user.id} className="text-white">{user.name}</Link>
-        <br />
-       </div>
-    ))}
-    </>
-  )
+    <div>
+      <h1>User List:</h1>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>
+            <Link href={`/users/${user.id}`}>{user.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

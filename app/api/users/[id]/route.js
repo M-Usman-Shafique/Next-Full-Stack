@@ -1,16 +1,19 @@
 // app/api/users/[id]/route.js
-import { data } from "@/utils/db";
 import { NextResponse } from "next/server";
+const { data } = require("@/utils/db");
 
-let users = data;
+const users = data;
 
-export function GET(req, res) {
-  console.log("Crude res. ID:", res); // output: { params: { id: '36' } } dynamic.
+export function GET(_, res) {
+  console.log("Crude ID:", res); // output in terminal: { params: { id: '36' } } dynamic.
   console.log("Refined but String ID:", res.params.id); // output: 23
-  const id = parseInt(res.params.id);
-  console.log("Integer ID:", id);
 
-  const userData = users.filter((user) => user.id === id);
-  console.log(userData); // output: Dynamic user's data.
-  return NextResponse.json(userData.length === 0 ? "No user found" : userData[0]);  // passing object by unpacking array.
+  const userId = parseInt(res.params.id); // for strict comparison (===) in filter method.
+  console.log("Integer ID:", userId);
+
+  const user = users.filter((item) => item.id === userId);
+
+  return user.length === 0
+    ? NextResponse.json("user not found")
+    : NextResponse.json(user[0]); // since user is an array of single object.
 }

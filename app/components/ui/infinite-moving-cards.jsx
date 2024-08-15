@@ -77,7 +77,7 @@ export const InfiniteMovingCards = ({
             }}
             key={item.id}
           >
-            <Link href={`/post/${item.id}`} className="no-underline text-[#E6EDF3]">
+            <div className="text-[#E6EDF3]">
               {item.featuredImage && (
                 <img
                   src={item.featuredImage}
@@ -91,7 +91,7 @@ export const InfiniteMovingCards = ({
                   {item.date} — by {item.author}
                 </div>
               </div>
-            </Link>
+            </div>
           </li>
         ))}
       </ul>

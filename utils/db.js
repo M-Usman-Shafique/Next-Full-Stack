@@ -3,24 +3,26 @@ export let data = [
     id: 1,
     name: "Hafiz Usman",
     age: 30,
-    course: "React.JS",
+    email: "usman@test.com",
   },
   {
     id: 2,
     name: "Noman Shafiq",
     age: 25,
-    course: "React.Native",
+    email: "noman@test.com",
   },
   {
     id: 3,
     name: "Salman Asif",
     age: 20,
-    course: "Python",
+    email: "salman@test.com",
+
   },
   {
     id: 4,
     name: "Luqman Ahmed",
-    age: 20,
-    course: "JAVA",
+    age: 15,
+    email: "luqman@test.com",
+
   },
 ];

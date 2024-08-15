@@ -2,7 +2,7 @@
 "use client";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
 import { useEffect, useState } from "react";
-import { getPosts } from "../../api/getPosts"; // Adjust path as needed
+import { getPosts } from "../../api/getPosts";
 
 function Carousel() {
   const [posts, setPosts] = useState([]);

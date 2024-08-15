@@ -1,4 +1,5 @@
 // app/api/getPosts.js
+// infinite-moving-cards
 export async function getPosts() {
     // Simulate an API call
     return new Promise((resolve) => {
