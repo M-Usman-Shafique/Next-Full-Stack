@@ -28,11 +28,11 @@ export default function addUsers() {
   };
 
   return (
-    <>
-      <h1 className="text-center">Add New User</h1>
+    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900 text-gray-200 p-8">
+      <h1 className="text-3xl font-bold mb-6">Add New User</h1>
       <form
         onSubmit={addUser}
-        className="flex flex-col gap-8 justify-center items-center"
+        className="flex flex-col gap-6 bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md"
       >
         <input
           type="text"
@@ -40,7 +40,7 @@ export default function addUsers() {
           value={name}
           placeholder="Name"
           onChange={(e) => setName(e.target.value)}
-          className="text-gray-500 p-2"
+          className="text-gray-200 bg-gray-700 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="text"
@@ -48,7 +48,7 @@ export default function addUsers() {
           value={age}
           placeholder="Age"
           onChange={(e) => setAge(e.target.value)}
-          className="text-gray-500 p-2"
+          className="text-gray-200 bg-gray-700 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="email"
@@ -56,15 +56,15 @@ export default function addUsers() {
           value={email}
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
-          className="text-gray-500 p-2"
+          className="text-gray-200 bg-gray-700 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button
           type="submit"
-          className="bg-blue-600 text-white px-2 py-1 rounded-md"
+          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
         >
           + Add User
         </button>
       </form>
-    </>
+    </div>
   );
 }
