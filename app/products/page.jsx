@@ -54,7 +54,7 @@ export default async function Products() {
                 <td className="px-4 py-2">{item.category}</td>
                 <td className="px-6 py-2">
                   <Link
-                    href={`/products/${item._id}`}
+                    href={`/products/${item._id}/update`}
                     className="opacity-50 text-lg hover:opacity-70"
                   >
                     <FaEdit />

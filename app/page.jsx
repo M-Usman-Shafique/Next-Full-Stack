@@ -9,25 +9,25 @@ export default function Home() {
         <div className="flex gap-2">
           <Link
             href="/users"
-            className="px-6 py-2 font-bold rounded-md text-lg bg-green-600"
+            className="px-6 py-2 font-bold rounded-md text-lg bg-green-600 active:scale-95"
           >
             GET
           </Link>
           <Link
             href="/addUsers"
-            className="px-6 py-2 font-bold rounded-md text-lg bg-yellow-500"
+            className="px-6 py-2 font-bold rounded-md text-lg bg-yellow-500 active:scale-95"
           >
             POST
           </Link>
           <Link
             href="/users"
-            className="px-6 py-2 font-bold rounded-md text-lg bg-blue-700"
+            className="px-6 py-2 font-bold rounded-md text-lg bg-blue-700 active:scale-95"
           >
             PUT
           </Link>
           <Link
             href="/users"
-            className="px-6 py-2 font-bold rounded-md text-lg bg-red-600"
+            className="px-6 py-2 font-bold rounded-md text-lg bg-red-600 active:scale-95"
           >
             DELETE
           </Link>
@@ -38,25 +38,25 @@ export default function Home() {
         <div className="flex gap-2 ">
           <Link
             href="/products"
-            className="px-6 py-2 font-bold rounded-md text-lg bg-green-600"
+            className="px-6 py-2 font-bold rounded-md text-lg bg-green-600 active:scale-95"
           >
             GET
           </Link>
           <Link
             href="/addProduct"
-            className="px-6 py-2 font-bold rounded-md text-lg bg-yellow-500"
+            className="px-6 py-2 font-bold rounded-md text-lg bg-yellow-500 active:scale-95"
           >
             POST
           </Link>
           <Link
             href="/products"
-            className="px-6 py-2 font-bold rounded-md text-lg bg-blue-700"
+            className="px-6 py-2 font-bold rounded-md text-lg bg-blue-700 active:scale-95"
           >
             PUT
           </Link>
           <Link
             href="/products"
-            className="px-6 py-2 font-bold rounded-md text-lg bg-red-600"
+            className="px-6 py-2 font-bold rounded-md text-lg bg-red-600 active:scale-95"
           >
             DELETE
           </Link>
