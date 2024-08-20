@@ -4,7 +4,9 @@ import { FaEdit } from "react-icons/fa";
 import DeleteProduct from "../components/DeleteProduct";
 
 const getProducts = async () => {
-  let data = await fetch("http://localhost:3000/api/products", {cache: "no-cache"});
+  let data = await fetch("http://localhost:3000/api/products", {
+    cache: "no-cache",
+  });
   data = await data.json();
 
   if (data.success) return data.result;
@@ -35,21 +37,31 @@ export default async function Products() {
           <tbody>
             {products.map((item, index) => (
               <tr
-                key={index}
+                key={item._id}
                 className={index % 2 === 0 ? "bg-gray-800" : "bg-gray-700"}
               >
-                <td className="px-4 py-2">{item.name}</td>
+                <td className="px-4 py-2">
+                  <Link
+                    href={`/products/${item._id}`}
+                    className="underline hover:text-blue-500"
+                  >
+                    {item.name}
+                  </Link>
+                </td>
                 <td className="px-4 py-2">{item.price}</td>
                 <td className="px-4 py-2">{item.company}</td>
                 <td className="px-4 py-2">{item.color}</td>
                 <td className="px-4 py-2">{item.category}</td>
                 <td className="px-6 py-2">
-                  <Link href={`/products/${item._id}`} className="opacity-50 text-lg hover:opacity-70">
+                  <Link
+                    href={`/products/${item._id}`}
+                    className="opacity-50 text-lg hover:opacity-70"
+                  >
                     <FaEdit />
                   </Link>
                 </td>
                 <td className="px-4 py-2">
-                  <DeleteProduct id={item._id}/>
+                  <DeleteProduct id={item._id} />
                 </td>
               </tr>
             ))}

@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-[70vh] flex-col items-center justify-center gap-10">
+    <main className="flex min-h-[70vh] flex-col items-center justify-center gap-20">
       <div className="flex flex-col justify-center items-center gap-3">
         <h2 className="text-slate-300 text-2xl font-bold">Demo (Static) CRUD</h2>
-        <div className="flex gap-2 ">
+        <div className="flex gap-2">
           <Link
             href="/users"
             className="px-6 py-2 font-bold rounded-md text-lg bg-green-600"

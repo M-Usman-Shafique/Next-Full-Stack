@@ -12,3 +12,7 @@ export function POST() {
 export function PUT() {
   return NextResponse.json("successfully upadated");
 }
+
+export function DELETE() {
+  return NextResponse.json("successfully deleted");
+}

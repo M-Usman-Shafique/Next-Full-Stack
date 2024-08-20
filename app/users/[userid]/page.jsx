@@ -8,8 +8,8 @@ const getUserDetails = async (id) => {
 };
 
 export default async function User({ params }) {
-  console.log(params); // output: { userid: '4'}
-  console.log(params.userid); // output: 2
+  // console.log(params); // output: { userid: '4'}
+  // console.log(params.userid); // output: 2
   const id = params.userid;
   let user = await getUserDetails(id);
 

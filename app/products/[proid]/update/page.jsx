@@ -1,10 +1,10 @@
-// app/products/[update]/page.jsx
+// app/products/[proid]/update/page.jsx
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function page({ params }) {
+export default function UpdateProduct({ params }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [company, setCompany] = useState("");
@@ -12,16 +12,16 @@ export default function page({ params }) {
   const [category, setCategory] = useState("");
   const router = useRouter();
 
-  // console.log(params) // {update: '66c30fa18776d268ec0ce69b'}
+  console.log(params) // {update: '66c30fa18776d268ec0ce69b'}
   // console.log(params.update) // 66c30fa18776d268ec0ce69b
-  const productId = params.update;
+  const id = params.proid;
 
   useEffect(() => {
     getProductDetails();
-  }, [productId]);
+  }, [id]);
 
   const getProductDetails = async () => {
-    let data = await fetch(`http://localhost:3000/api/products/${productId}`);
+    let data = await fetch(`http://localhost:3000/api/products/${id}`);
     data = await data.json();
 
     let result = data.result;
@@ -35,9 +35,9 @@ export default function page({ params }) {
     }
   };
 
-  const updateProduct = async (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
-    let data = await fetch(`http://localhost:3000/api/products/${productId}`, {
+    let data = await fetch(`http://localhost:3000/api/products/${id}`, {
       method: "PUT",
       body: JSON.stringify({name, price, company, color, category})
     });
@@ -62,7 +62,7 @@ export default function page({ params }) {
         <h1 className="text-center text-2xl font-semibold mb-4">
           Update Product Details
         </h1>
-        <form onSubmit={updateProduct} className="space-y-4">
+        <form onSubmit={handleUpdate} className="space-y-4">
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-1">
               Product Name

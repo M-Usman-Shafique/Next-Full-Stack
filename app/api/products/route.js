@@ -2,12 +2,13 @@ import { Product } from "@/lib/model/product"
 import mongoose from "mongoose"
 import { NextResponse } from "next/server"
 
-export const connectionStr = process.env.MONGODB_CONNECT;
+export const connectionStr = process.env.MONGODB_URI;
 
 export async function GET() {
     await mongoose.connect(connectionStr)
     const data = await Product.find();
-    console.log(data)
+    // find: retrieves multiple documents that match a specified query.
+    // console.log(data)
     return NextResponse.json({result: data, success: true})
 }
 
