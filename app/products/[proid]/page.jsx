@@ -4,8 +4,7 @@ import { FaEdit } from "react-icons/fa";
 
 const getProductDetails = async (id) => {
   let data = await fetch(`http://localhost:3000/api/products/${id}`);
-  data = await data.json();
-  return data;
+  return data = await data.json();
 };
 
 export default async function Product({ params }) {

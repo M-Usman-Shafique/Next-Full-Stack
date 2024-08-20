@@ -12,7 +12,7 @@ export default function UpdateProduct({ params }) {
   const [category, setCategory] = useState("");
   const router = useRouter();
 
-  console.log(params) // {update: '66c30fa18776d268ec0ce69b'}
+  // console.log(params) // {update: '66c30fa18776d268ec0ce69b'}
   // console.log(params.update) // 66c30fa18776d268ec0ce69b
   const id = params.proid;
 

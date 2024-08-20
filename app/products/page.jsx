@@ -7,14 +7,13 @@ const getProducts = async () => {
   let data = await fetch("http://localhost:3000/api/products", {
     cache: "no-cache",
   });
-  data = await data.json();
-
-  if (data.success) return data.result;
-  else return { success: false };
+  return data = await data.json();
 };
 
 export default async function Products() {
-  const products = await getProducts();
+  let products = await getProducts();
+  console.log(products) // {result: data, success: true}
+  products = products.result;
 
   return (
     <div className="bg-gray-900 text-gray-200 min-h-screen p-6">
