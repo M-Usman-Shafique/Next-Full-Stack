@@ -9,7 +9,7 @@ const getProductDetails = async (id) => {
 
 export default async function Product({ params }) {
 //   console.log(params);
-//   console.log(params.proid);
+//   console.log(params.proid); // proid filename
   const id = params.proid;
   let product = await getProductDetails(id);
 //   console.log(product);

@@ -32,8 +32,12 @@ export async function POST(req) {
     const payload = await req.json();
 
     await mongoose.connect(connectionStr)
+
+    // creating new document instance of the Product model: 
     let product = new Product(payload)
 
+    // Saving thenew product document to the MongoDB database:
     const data = await product.save();
+
     return NextResponse.json({result: data, success: true})
 }
