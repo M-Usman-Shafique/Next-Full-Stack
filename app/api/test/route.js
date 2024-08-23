@@ -9,3 +9,14 @@ export async function GET() {
 
     return NextResponse.json({result: data, success: true})
 }
+
+export async function POST(req) {
+    const payload = await req.json();
+
+    await mongoose.connection(connectionKey)
+
+    const test = new Test(payload)
+    const data = await test.save();
+
+    return NextResponse.json({result: data, success: true})
+}
