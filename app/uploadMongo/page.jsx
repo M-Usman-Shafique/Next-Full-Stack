@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { BiLogoMongodb } from "react-icons/bi";
+import ShowImages from "../showImages/page";
 
 export default function UploadMongo() {
   const [file, setFile] = useState("");
@@ -29,23 +31,29 @@ export default function UploadMongo() {
       alert("File upload failed.");
     }
   };
+
   return (
+    <>
+    <div className="flex justify-center mt-10">
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-lg space-y-4"
+      className="flex flex-col items-center max-w-[30%] h-[35vh] p-6 bg-gray-800 rounded-lg shadow-lg space-y-4"
     >
-      <h1 className="text-lg">Upload to MongoDB</h1>
+      <h1 className="text-lg flex items-center text-green-500"><BiLogoMongodb className="inline-block text-2xl"/>MongoDB</h1>
       <input
         type="file"
         onChange={(e) => setFile(e.target.files?.[0])}
-        className="w-full text-gray-300 border-2 border-gray-600 bg-gray-700 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+        className="w-full text-gray-300 border-2 border-gray-600 bg-gray-700 rounded-lg p-2"
       />
       <button
         type="submit"
-        className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        className="w-full bg-green-500 text-black py-2 px-4 rounded-lg"
       >
         Upload
       </button>
     </form>
+    </div>
+    <ShowImages />
+    </>
   );
 }
