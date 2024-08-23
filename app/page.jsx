@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Upload from "./upload/page";
+import UploadNext from "./uploadNext/page";
+import UploadMongo from "./uploadMongo/page";
 // import Carousel from "./components/ui/Carousel";
 
 export default function Home() {
@@ -64,7 +65,8 @@ export default function Home() {
         </div>
       </div>
       {/* <Carousel /> */}
-      <Upload />
+      {/* <UploadNext /> */}
+      <UploadMongo />
     </main>
   );
 }

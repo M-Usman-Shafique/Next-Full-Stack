@@ -1,25 +1,30 @@
 "use client";
 import { useState } from "react";
 
-export default function Upload() {
+export default function UploadMongo() {
   const [file, setFile] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log(file)
+
     if (!file) {
       alert("Please select a file.");
       return;
     }
     const data = new FormData();
-    data.set("file", file);
+    data.append("file", file);
 
-    let result = await fetch("/api/upload", {
+    let result = await fetch("/api/uploadMongo", {
       method: "POST",
       body: data,
     });
     result = await result.json();
+    console.log(result)
     if (result.success) {
       alert("File uploaded successfully");
+      setFile(null);
     } else {
       alert("File upload failed.");
     }
@@ -29,6 +34,7 @@ export default function Upload() {
       onSubmit={handleSubmit}
       className="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-lg space-y-4"
     >
+      <h1 className="text-lg">Upload to MongoDB</h1>
       <input
         type="file"
         onChange={(e) => setFile(e.target.files?.[0])}
