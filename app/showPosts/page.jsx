@@ -32,6 +32,7 @@ export default function ShowPosts() {
       {posts.map((post) => (
         <div key={post._id} className="w-full max-w-screen-lg mb-6">
           <h2 className="text-lg font-bold mb-2">{post.caption}</h2>
+          <p className="text-sm text-gray-500 mb-4">{new Date(post.createdAt).toLocaleDateString()}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {post.images.map((image, index) => (
               <div key={index} className="relative w-full h-64 overflow-hidden rounded-lg shadow-lg">

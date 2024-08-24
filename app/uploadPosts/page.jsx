@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { BiLogoMongodb } from "react-icons/bi";
-import ShowPosts from "../api/posts/showPosts/page";
+import ShowPosts from "../showPosts/page";
 
 export default function UploadMongo() {
   const [files, setFiles] = useState([]);
