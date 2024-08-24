@@ -35,7 +35,7 @@ export default function ShowImages() {
             <img
               src={item.data}
               alt={item.name}
-              className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+              className="w-full h-full object-cover"
             />
           </div>
         ))}
