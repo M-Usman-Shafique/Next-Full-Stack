@@ -1,3 +1,4 @@
+// app/uploadMongo/page.jsx
 "use client";
 import { useState } from "react";
 import { BiLogoMongodb } from "react-icons/bi";

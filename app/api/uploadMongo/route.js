@@ -16,7 +16,12 @@ export async function GET() {
   await connectToDatabase();
   const images = await Image.find().select("name data contentType");
 
-  return NextResponse.json({ success: true, images });
+  const imagesWithBase64 = images.map(image => ({
+    ...image.toObject(),
+    data: `data:${image.contentType};base64,${image.data.toString('base64')}`
+  }));
+
+  return NextResponse.json({ success: true, images: imagesWithBase64 });
 }
 
 export async function POST(req) {
