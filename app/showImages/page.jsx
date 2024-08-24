@@ -36,7 +36,5 @@ export default function ShowImages() {
     ))}
   </div>
 </div>
-
-
   );
 }

@@ -4,32 +4,45 @@ import { connectionStr } from "../products/route";
 import { NextResponse } from "next/server";
 import { Image } from "@/lib/model/image";
 
-export async function GET() {
+let isConnected = false;
+
+async function connectToDatabase() {
+  if (isConnected) return;
   await mongoose.connect(connectionStr);
-  const images = await Image.find().select('name data contentType')
+  isConnected = true;
+}
+
+export async function GET() {
+  await connectToDatabase();
+  const images = await Image.find().select("name data contentType");
 
   return NextResponse.json({ success: true, images });
-  
 }
 
 export async function POST(req) {
-  await mongoose.connect(connectionStr);
+  await connectToDatabase();
   const data = await req.formData();
-  const file = data.get("file");
+  const files = data.getAll("files");
 
-  if (!file) {
-    return NextResponse.json({ success: false });
+  if (files.length === 0) {
+    return NextResponse.json({ message: "No files uploaded", success: false });
   }
 
-  const byteData = await file.arrayBuffer();
-  const buffer = Buffer.from(byteData);
+  const promises = files.map(async (file) => {
+    const byteData = await file.arrayBuffer();
+    const buffer = Buffer.from(byteData);
 
-  const newImage = Image({
-    name: file.name,
-    data: buffer,
-    contentType: file.type,
+    const newImage = new Image({
+      name: file.name,
+      data: buffer,
+      contentType: file.type,
+    });
+
+    return newImage.save();
   });
-  await newImage.save();
+
+  await Promise.all(promises);
+
   return NextResponse.json({
     result: "successfully uploaded to MongoDB.",
     success: true,
