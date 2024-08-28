@@ -14,8 +14,8 @@ export default async function User({ params }) {
   let user = await getUserDetails(id);
 
   return (
-    <div className="flex flex-col items-center p-8 bg-gray-900 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-slate-300">User Details</h1>
+    <div className="flex flex-col items-center justify-center p-8 min-h-screen">
+      <h1 className="text-2xl bg-font-bold mb-6 text-slate-300">User Details</h1>
       <ul className="relative bg-gray-800 rounded-lg px-6 py-5 w-full max-w-sm shadow-lg">
         <Link
           href={`/users/${user.id}/update`}

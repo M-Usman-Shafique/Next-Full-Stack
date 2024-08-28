@@ -27,7 +27,7 @@ export default function page() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+        <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center">
           <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
             <h1 className="text-center text-2xl font-semibold mb-4">Add Product Details</h1>
             <form onSubmit={handleSubmit} className="space-y-4">

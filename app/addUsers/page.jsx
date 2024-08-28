@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function addUsers() {
@@ -28,12 +29,12 @@ export default function addUsers() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900 text-gray-200 p-8">
-      <h1 className="text-3xl font-bold mb-6">Add New User</h1>
+    <div className="flex flex-col justify-center items-center min-h-screen text-gray-200 p-8">
       <form
         onSubmit={addUser}
         className="flex flex-col gap-6 bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md"
       >
+      <h1 className="text-2xl font-bold text-center">Add New User</h1>
         <input
           type="text"
           id="name"
@@ -64,6 +65,7 @@ export default function addUsers() {
         >
           + Add User
         </button>
+      <Link href="/" className="text-blue-600 text-center hover:underline">Back to Home</Link>
       </form>
     </div>
   );

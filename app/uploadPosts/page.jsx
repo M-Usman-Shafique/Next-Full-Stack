@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { BiLogoMongodb } from "react-icons/bi";
 import ShowPosts from "../showPosts/page";
+import Link from "next/link";
 
 export default function UploadMongo() {
   const [files, setFiles] = useState([]);
@@ -60,7 +61,7 @@ export default function UploadMongo() {
             value={caption}
             onChange={handleCaptionChange}
             placeholder="Enter caption..."
-            className="w-full text-gray-300 border-2 border-gray-600 bg-gray-700 rounded-lg p-2"
+            className="w-full text-gray-300 border-2 border-gray-600 outline-none bg-gray-700 rounded-lg p-2"
           />
           <input
             type="file"
@@ -74,6 +75,7 @@ export default function UploadMongo() {
           >
             Upload
           </button>
+        <Link href="/" className="text-blue-500 hover:underline">Back to Home</Link>
         </form>
       </div>
       <ShowPosts />

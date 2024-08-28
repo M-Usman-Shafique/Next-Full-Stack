@@ -44,12 +44,12 @@ export default function UpdateUser({ params }) {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900 text-gray-200 p-8">
-      {/* <h1 className="text-3xl font-bold mb-6">Update User Details</h1> */}
+    <div className="flex flex-col justify-center items-center min-h-screen text-gray-200 p-8">
       <form
         onSubmit={handleUpdate}
         className="flex flex-col gap-6 bg-gray-800 p-8 rounded-lg shadow-lg"
       >
+      <h1 className="text-xl text-center font-bold">Edit User Details</h1>
         <input
           type="text"
           id="name"
@@ -74,16 +74,16 @@ export default function UpdateUser({ params }) {
           className="text-gray-200 bg-gray-700 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Email"
         />
-        <div className="flex justify-between">
+        <div className="flex gap-2">
           <Link
             href="/users"
-            className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition"
+            className="bg-green-600 flex-1 text-center text-white p-2 rounded-md hover:bg-green-700 transition"
           >
             Back
           </Link>
           <button
             type="submit"
-            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+            className="bg-blue-600 flex-1 text-white p-2 rounded-md hover:bg-blue-700 transition"
           >
             Done
           </button>

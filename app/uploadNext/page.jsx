@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { TbBrandNextjs } from "react-icons/tb";
 
@@ -20,7 +21,7 @@ export default function UploadNext() {
     });
     result = await result.json();
     if (result.success) {
-      alert("File uploaded successfully");
+      alert("File uploaded successfully. See 'public/uploads/' folder.");
       setFile(null);
     } else {
       alert("File upload failed.");
@@ -31,7 +32,7 @@ export default function UploadNext() {
     <div className="flex justify-center min-h-screen mt-10">
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-center max-w-[30%] h-[35vh] p-6 bg-gray-100 rounded-lg shadow-lg space-y-4"
+      className="flex flex-col items-center max-w-[30%] h-[40vh] p-6 bg-gray-100 rounded-lg shadow-lg space-y-4"
     >
       <h1 className="text-xl font-bold flex items-center text-black"><TbBrandNextjs className="inline-block text-2xl mr-1"/>Next.JS</h1>
       <input
@@ -45,6 +46,7 @@ export default function UploadNext() {
       >
         Upload
       </button>
+      <Link href="/" className="text-black hover:underline">Back to Home</Link>
     </form>
     </div>
   );

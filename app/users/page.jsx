@@ -11,7 +11,7 @@ export default async function Users() {
   const users = await getUsers();
   return (
     <div className="flex flex-col justify-center items-center p-8 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-slate-300">User List</h1>
+      <h1 className="text-3xl font-bold mb-6 text-slate-300">Users List</h1>
       <ul className="w-full max-w-md space-y-4">
         {users.map((user) => (
           <li key={user.id} className="bg-gray-800 shadow-lg rounded-lg p-4">
@@ -37,7 +37,7 @@ export default async function Users() {
       </ul>
       <Link
         href="/"
-        className="mt-8 text-blue-600 hover:underline text-lg font-medium"
+        className="mt-8 text-blue-700 hover:underline text-lg font-medium"
       >
         Back to Home
       </Link>
